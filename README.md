@@ -1,10 +1,10 @@
 <div align="center">
 
-![Last commit](https://img.shields.io/github/last-commit/Comamoca/miauth.js?style=flat-square)
-![Repository Stars](https://img.shields.io/github/stars/Comamoca/miauth.js?style=flat-square)
-![Issues](https://img.shields.io/github/issues/Comamoca/miauth.js?style=flat-square)
-![Open Issues](https://img.shields.io/github/issues-raw/Comamoca/miauth.js?style=flat-square)
-![Bug Issues](https://img.shields.io/github/issues/Comamoca/miauth.js/bug?style=flat-square)
+![Last commit](https://img.shields.io/github/last-commit/Comamoca/miauth.js?color=green&style=flat-square)
+<img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Comamoca/miauth.js?color=green&style=flat-square">
+![Issues](https://img.shields.io/github/issues/Comamoca/miauth.js?color=green&style=flat-square)
+![Open Issues](https://img.shields.io/github/issues-raw/Comamoca/miauth.js?color=green&style=flat-square)
+![Bug Issues](https://img.shields.io/github/issues/Comamoca/miauth.js/bug?color=green&style=flat-square)
 
 # 🦊 MiAuth.js
 
