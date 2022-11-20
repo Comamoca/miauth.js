@@ -40,7 +40,7 @@ import { generate } from "./src/deps.ts";
 const origin = "https://misskey.io";
 const permission = [Permissions.AccountRead, Permissions.NotesRead];
 
-const session = generate() as string;
+const session = crypto.randomUUID();
 
 const param: UrlParam = {
   name: "MyApp",

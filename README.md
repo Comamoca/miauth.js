@@ -25,112 +25,106 @@ the wrapper for [MiAuth](https://misskey-hub.net/docs/api/) on Deno/Node.js
 
 </div>
 
-> **Note** for node.js exsample, comeing soon...:sparkles:
+> **Note**
+> for node.js exsample, comeing soon...:sparkles:
 
 ## 🚀 How to use
 
 - Deno
-
 ```ts
 // See exsample.ts
 
-import { MiAuth, Permissions, UrlParam } from "./mod.ts";
-import { generate } from "./src/deps.ts";
+import { MiAuth, UrlParam, Permissions  } from "./mod.ts"
 
-const origin = "https://misskey.io";
-const permission = [Permissions.AccountRead];
+const origin = "https://misskey.io"
+const permission = [Permissions.AccountRead]
 
-const session = generate() as string;
+const session = crypto.randomUUID();
 
 const param: UrlParam = {
   name: "MyApp",
-  permission: permission,
-};
-const miauth = new MiAuth(origin, param, session);
+  permission: permission
+}
+const miauth = new MiAuth(origin, param, session)
 
 // accses to the this url, do authentication
-console.log(miauth.authUrl());
+console.log(miauth.authUrl())
 
 // call when done authentication
 // console.log(await miauth.getToken())
 ```
 
-This module keeps in mind on alignment with
-[misskey.js](https://github.com/misskey-dev/misskey.js). like this
+This module keeps in mind on alignment with [misskey.js](https://github.com/misskey-dev/misskey.js). like this
 
 - Deno
-
 ```ts
 // this snippets omit module imports
-const origin = "https://misskey.io";
-const permission: Array<string> = [Permissions.AccountRead];
+const origin = "https://misskey.io"
+const permission: Array<string> = [Permissions.AccountRead]
 
 const param: UrlParam = {
   name: "MyApp",
-  permission: permission,
-};
+  permission: permission
+}
 
-const miauth = quickAuth(origin, param);
+const miauth = quickAuth(origin, param)
 
-console.log("Let's authentication to this URL✨\n", miauth.authUrl());
+console.log("Let's authentication to this URL✨\n", miauth.authUrl())
 
 // wait for press enter
-console.log("\n☕ Push enter for restart process");
+console.log("\n☕ Push enter for restart process")
 for await (const line of readLines(Deno.stdin)) {
-  if (line == "") {
-    break;
+  if ( line == "" ) {
+    break
   }
 }
 
-const token = await miauth.getToken();
+const token = await miauth.getToken()
 
 const cli = new Misskey.api.APIClient({
-  origin: origin,
-  credential: token,
+	origin: origin,
+	credential: token,
 });
 
-const i = await cli.request("i", {});
+const i = await cli.request('i', {});
 
-console.log(`Show your profile\n${i.name}@${i.username}\n${i.description}`);
+console.log(`Show your profile\n${i.name}@${i.username}\n${i.description}`)
 ```
 
-## ⬇️ Install
+## ⬇️  Install
 
 - Deno
-
 ```ts
-import { MiAuth, Permissions, UrlParam } from "./mod.ts";
+import { MiAuth, UrlParam, Permissions  } from "./mod.ts"
 
-const origin = "https://misskey.io";
-const permission: Array<string> = [
-  Permissions.AccountRead,
-  Permissions.NotesRead,
-];
+const origin = "https://misskey.io"
+const permission: Array<string> = [Permissions.AccountRead, Permissions.NotesRead]
 
 const param: UrlParam = {
   name: "MyApp",
-  permission: permission,
-};
+  permission: permission
+}
 
-const miauth = new MiAuth(origin, param, session);
-const token = miauth.getToken();
+const miauth = new MiAuth(origin, param, session)
+const token = miauth.getToken()
 
 const apiParam = {
   origin: origin,
-  credential: token,
-};
+  credential: token
+}
 const cli = new Misskey.api.APIClient(apiParam);
 
-const meta = await cli.request("meta", { detail: true });
-console.log(meta);
+const meta = await cli.request('meta', { detail: true });
+console.log(meta)
 ```
 
 - Node.js
-
-```
 ```
 
-## ⛏️ Development
+```
+
+
+## ⛏️   Development
 
 this project use [velociraptor](https://velociraptor.run/)
 
@@ -155,6 +149,7 @@ MIT
 [See LICENSE](./LICENSE)
 
 ### 🧩 Modules
+
 
 ## 💕 Special Thanks
 
