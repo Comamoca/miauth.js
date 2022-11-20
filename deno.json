@@ -1,0 +1,17 @@
+{
+  "lint": {
+    "files": {
+      "include": [
+        "src",
+        "test"
+      ]
+    },
+    "rules": {
+      "tags": ["recommended"],
+      "exclude": [
+        "no-namespace",
+        "no-async-promise-executor"
+      ]
+    }
+  }
+}

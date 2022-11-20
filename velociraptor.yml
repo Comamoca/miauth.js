@@ -1,0 +1,15 @@
+envFile:
+  - .env
+
+scripts:
+  dev:
+    cmd: deno run --import-map=vendor/import_map.json mod.ts
+  dev-test:
+    cmd: deno test --import-map=vendor/import_map.json ./test/auth.test.ts
+  build:
+    cmd: deno run -A build.ts
+  ex:
+    cmd: deno run -A ./exsamples/exsample.ts
+  ex-misskeyjs:
+    cmd: deno run -A ./exsamples/with_misskeyjs.test
+  # importMap: ./src/import_map.json
