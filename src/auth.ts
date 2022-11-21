@@ -10,12 +10,12 @@ export interface UrlParam {
 }
 
 /**
- * thow when incorrect format url parametor hand over MiAuth class
+ * thow when incorrect format url parameter hand over MiAuth class
  */
-class UrlParametorError extends Error {
+class UrlParameterError extends Error {
   constructor() {
     // TODO: ここに気の利いたエラーを入れる
-    super("UrlParametorError");
+    super("UrlParameterError");
   }
 }
 
@@ -34,7 +34,7 @@ export class MiAuth {
    *   your on the instance url
    *
    * param:
-   *   url parametor. see UrlParam
+   *   url parameter. see UrlParam
    */
 
   private origin: string;
@@ -60,7 +60,7 @@ export class MiAuth {
 
   /**
    * return misskey api token
-   * when failed authentication, thow AuthenticationError
+   * when failed authentication, throw AuthenticationError
    */
   public async getToken(): Promise<string> {
     const url = new URL(
@@ -79,9 +79,9 @@ export class MiAuth {
   }
 
   /**
-   * build for parametor of miauth authentication url
-   * when you incorrect parametor, thow UrlParametorError,
-   * but, when callback parametor incorrect do not thow that error
+   * build for parameter of miauth authentication url
+   * when you incorrect parameter, thow UrlParametorError,
+   * but, when callback parameter incorrect do not throw that error
    */
   private buildParam(param: UrlParam): string {
     const urlParam: Record<string, string> = {
@@ -96,7 +96,7 @@ export class MiAuth {
       convertdParam.set(key, String(urlParam[key]));
       if (key != "callback") {
         if (typeof urlParam[key] === "undefined") {
-          throw UrlParametorError;
+          throw UrlParameterError;
         }
       } else {
         if (typeof urlParam[key] === "undefined") {
