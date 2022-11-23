@@ -26,7 +26,7 @@ the wrapper for [MiAuth](https://misskey-hub.net/docs/api/) on Deno/Node.js
 </div>
 
 > **Note**
-> for node.js exsample, comeing soon...:sparkles:
+> for node.js exsample, coming soon...:sparkles:
 
 ## 🚀 How to use
 
