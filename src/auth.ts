@@ -87,7 +87,7 @@ export class MiAuth {
     const urlParam: Record<string, string> = {
       name: param.name,
       callback: param.callback as string,
-      permission: param.permission.join(", "),
+      permission: param.permission.join(","),
     };
 
     const convertdParam = new URLSearchParams();
