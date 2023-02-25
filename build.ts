@@ -3,7 +3,7 @@ import { build, emptyDir } from "https://deno.land/x/dnt@0.31.0/mod.ts";
 await emptyDir("./npm");
 
 await build({
-  packageManager: "yarn",
+  packageManager: "pnpm",
   entryPoints: ["./mod.ts"],
   outDir: "./npm",
   shims: {
