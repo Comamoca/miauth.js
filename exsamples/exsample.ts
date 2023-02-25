@@ -2,7 +2,10 @@ import { Permissions, quickAuth, UrlParam } from "../mod.ts";
 import { readLines } from "https://deno.land/std@0.101.0/io/mod.ts";
 
 const origin = "https://misskey.io";
-const permission: Array<string> = [Permissions.AccountRead];
+const permission: Array<string> = [
+  Permissions.AccountRead,
+  Permissions.NotesRead,
+];
 
 const param: UrlParam = {
   name: "MyApp",

@@ -6,8 +6,8 @@ const origin = "https://misskey.io";
 const permission: Array<string> = [Permissions.AccountRead];
 
 const param: UrlParam = {
-  name: "MyApp",
-  permission: permission,
+	name: "MyApp",
+	permission: permission,
 };
 
 // quickMiAuth is wrapper for get MiAuth isntance quickly
@@ -23,19 +23,19 @@ console.log("Let's authentication to this URL✨\n", miauth.authUrl());
 // wait for press enter
 console.log("\n☕ Push enter for restart process");
 for await (const line of readLines(Deno.stdin)) {
-  if (line == "") {
-    break;
-  }
+	if (line == "") {
+		break;
+	}
 }
 
 // then you assignment token like this
 const token = await miauth.getToken();
 
-const cli = new Misskey.api.APIClient({
-  origin: origin,
-  credential: token,
+const client = new Misskey.api.APIClient({
+	origin: origin,
+	credential: token,
 });
 
-const i = await cli.request("i", {});
+const i = await client.request("i", {});
 
 console.log(`Show your profile\n${i.name}@${i.username}\n${i.description}`);
