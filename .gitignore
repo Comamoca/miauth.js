@@ -158,4 +158,7 @@ dist
 # SvelteKit build / generate output
 .svelte-kit
 
+/npm
+deno.lock
+
 # End of https://www.toptal.com/developers/gitignore/api/node,deno,linux
