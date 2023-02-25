@@ -25,6 +25,7 @@ const param: UrlParam = {
 Deno.test("testing authUrl", () => {
   const miauth = new MiAuth(origin, param, session);
   const url =
-    `https://misskey.io/miauth/${session}?name=MyApp&permission=read%3Aaccount%2C+read%3Anotes`;
+    `https://misskey.io/miauth/${session}?name=MyApp&permission=read%3Aaccount%2Cread%3Anotes`;
+  console.log(url);
   assertEquals(miauth.authUrl(), url);
 });
