@@ -1,0 +1,39 @@
+lockfileVersion: 5.4
+
+specifiers:
+  ky: ^0.33.2
+  miauth-js: link:../../npm
+  misskey-js: ^0.0.15
+
+dependencies:
+  ky: 0.33.2
+  miauth-js: link:../../npm
+  misskey-js: 0.0.15
+
+packages:
+
+  /autobind-decorator/2.4.0:
+    resolution: {integrity: sha512-OGYhWUO72V6DafbF8PM8rm3EPbfuyMZcJhtm5/n26IDwO18pohE4eNazLoCGhPiXOCD0gEGmrbU3849QvM8bbw==}
+    engines: {node: '>=8.10', npm: '>=6.4.1'}
+    dev: false
+
+  /eventemitter3/4.0.7:
+    resolution: {integrity: sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==}
+    dev: false
+
+  /ky/0.33.2:
+    resolution: {integrity: sha512-f6oS2rKUcPu5FzdqCDbFpmzis/JlqFZw8uIHm/jf8Kc3vtnW+VDhuashOAKyBZv8bFiZFZUMNxTC0JtahEvujA==}
+    engines: {node: '>=14.16'}
+    dev: false
+
+  /misskey-js/0.0.15:
+    resolution: {integrity: sha512-sCfQcPooD5Tfe/5pDr5JojAthhGot+hlidw67tj+7+AtZO5He3kBhsjJydY0vru6w3RFM5mzYR6SYISSBR/1WQ==}
+    dependencies:
+      autobind-decorator: 2.4.0
+      eventemitter3: 4.0.7
+      reconnecting-websocket: 4.4.0
+    dev: false
+
+  /reconnecting-websocket/4.4.0:
+    resolution: {integrity: sha512-D2E33ceRPga0NvTDhJmphEgJ7FUYF0v4lr1ki0csq06OdlxKfugGzN0dSkxM/NfqCxYELK4KcaTOUOjTV6Dcng==}
+    dev: false
