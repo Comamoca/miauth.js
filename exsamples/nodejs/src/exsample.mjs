@@ -6,13 +6,13 @@ import { setInterval, setTimeout } from "timers/promises";
 
 const origin = "https://misskey.io";
 const permission = [
-	Permissions.AccountRead,
-	Permissions.NotesRead,
+  Permissions.AccountRead,
+  Permissions.NotesRead,
 ];
 
 const param = {
-	name: "MyApp",
-	permission: permission,
+  name: "MyApp",
+  permission: permission,
 };
 
 // quickMiAuth is wrapper for get MiAuth isntance quickly

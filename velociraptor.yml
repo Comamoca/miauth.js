@@ -12,4 +12,7 @@ scripts:
     cmd: deno run -A ./exsamples/exsample.ts
   ex-misskeyjs:
     cmd: deno run -A ./exsamples/with_misskeyjs.test
+  test:
+    cmd: deno test ./test
+
   # importMap: ./src/import_map.json

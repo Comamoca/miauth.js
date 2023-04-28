@@ -1,4 +1,4 @@
-import { build, emptyDir } from "https://deno.land/x/dnt@0.31.0/mod.ts";
+import { build, emptyDir } from "https://deno.land/x/dnt@0.33.1/mod.ts";
 
 await emptyDir("./npm");
 
@@ -6,6 +6,12 @@ await build({
   packageManager: "pnpm",
   entryPoints: ["./mod.ts"],
   outDir: "./npm",
+  mappings: {
+    "https://esm.sh/axios@1.4.0": {
+      name: "axios",
+      version: "1.4.0",
+    },
+  },
   shims: {
     // see JS docs for overview and more options
     deno: true,
