@@ -1,4 +1,5 @@
-import { join, ky } from "./deps.ts";
+import { join } from "./deps.ts";
+import axios from "https://esm.sh/axios@1.4.0";
 
 /**
  * parametor of MiAuth url
@@ -68,7 +69,10 @@ export class MiAuth {
       this.origin,
     );
 
-    const data: Record<string, unknown> = await ky.post(url).json();
+    // swhitch to fetch API from ky
+    // const data: Record<string, unknown> = await ky.post(url).json();
+    const resp = await axios.post(url.toString());
+    const data: Record<string, unknown> = resp.data;
     const token = String(data.token);
 
     if (typeof data.token === "undefined") {
