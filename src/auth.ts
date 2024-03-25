@@ -62,11 +62,19 @@ export class MiAuth {
    * return misskey api token
    * when failed authentication, throw AuthenticationError
    */
-  public async getToken(): Promise<string> {
-    const url = new URL(
-      join("api", "miauth", this.session, "check"),
-      this.origin,
-    );
+  public getToken(): Promise<string> {
+    return MiAuth.getToken(this.origin, this.session);
+  }
+
+  /**
+   * return misskey api token
+   * when failed authentication, throw AuthenticationError
+   */
+  public static async getToken(
+    origin: string,
+    session: string,
+  ): Promise<string> {
+    const url = new URL(join("api", "miauth", session, "check"), origin);
 
     const data: Record<string, unknown> = await ky.post(url).json();
     const token = String(data.token);
