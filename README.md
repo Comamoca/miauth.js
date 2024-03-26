@@ -47,7 +47,7 @@ const param: UrlParam = {
 }
 const miauth = new MiAuth(origin, param, session)
 
-// accses to the this url, do authentication
+// access to the this url, do authentication
 console.log(miauth.authUrl())
 
 // call when done authentication
