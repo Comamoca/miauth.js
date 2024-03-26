@@ -9,7 +9,7 @@ scripts:
   build:
     cmd: deno run -A build.ts
   ex:
-    cmd: deno run -A ./exsamples/exsample.ts
+    cmd: deno run -A ./examples/example.ts
   ex-misskeyjs:
-    cmd: deno run -A ./exsamples/with_misskeyjs.test
+    cmd: deno run -A ./examples/with_misskeyjs.test
   # importMap: ./src/import_map.json
