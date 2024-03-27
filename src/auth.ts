@@ -1,7 +1,7 @@
 import { join, ky } from "./deps.ts";
 
 /**
- * parametor of MiAuth url
+ * parameter of MiAuth url
  */
 export interface UrlParam {
   name: string;
@@ -10,7 +10,7 @@ export interface UrlParam {
 }
 
 /**
- * thow when incorrect format url parameter hand over MiAuth class
+ * throw when incorrect format url parameter hand over MiAuth class
  */
 class UrlParameterError extends Error {
   constructor() {
@@ -80,7 +80,7 @@ export class MiAuth {
 
   /**
    * build for parameter of miauth authentication url
-   * when you incorrect parameter, thow UrlParametorError,
+   * when you incorrect parameter, throw UrlParameterError,
    * but, when callback parameter incorrect do not throw that error
    */
   private buildParam(param: UrlParam): string {
@@ -90,21 +90,21 @@ export class MiAuth {
       permission: param.permission.join(","),
     };
 
-    const convertdParam = new URLSearchParams();
+    const convertedParam = new URLSearchParams();
 
     Object.keys(urlParam).forEach((key) => {
-      convertdParam.set(key, String(urlParam[key]));
+      convertedParam.set(key, String(urlParam[key]));
       if (key != "callback") {
         if (typeof urlParam[key] === "undefined") {
           throw UrlParameterError;
         }
       } else {
         if (typeof urlParam[key] === "undefined") {
-          convertdParam.delete("callback");
+          convertedParam.delete("callback");
         }
       }
     });
-    return convertdParam.toString();
+    return convertedParam.toString();
   }
 }
 

@@ -10,14 +10,14 @@ const param: UrlParam = {
 	permission: permission,
 };
 
-// quickMiAuth is wrapper for get MiAuth isntance quickly
+// quickMiAuth is wrapper for get MiAuth instance quickly
 const miauth = quickAuth(origin, param);
 // const token = await miauth.getToken()
 
 // call when done authentication
 // console.log(await miauth.getToken())
 
-// accses to the this url, verfy authentication
+// access to the this url, verify authentication
 console.log("Let's authentication to this URL✨\n", miauth.authUrl());
 
 // wait for press enter

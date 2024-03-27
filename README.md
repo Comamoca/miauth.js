@@ -26,13 +26,13 @@ the wrapper for [MiAuth](https://misskey-hub.net/docs/api/) on Deno/Node.js
 </div>
 
 > **Note**
-> for node.js exsample, coming soon...:sparkles:
+> for node.js example, coming soon...:sparkles:
 
 ## 🚀 How to use
 
 - Deno
 ```ts
-// See exsample.ts
+// See example.ts
 
 import { MiAuth, UrlParam, Permissions  } from "./mod.ts"
 
@@ -47,7 +47,7 @@ const param: UrlParam = {
 }
 const miauth = new MiAuth(origin, param, session)
 
-// accses to the this url, do authentication
+// access to the this url, do authentication
 console.log(miauth.authUrl())
 
 // call when done authentication

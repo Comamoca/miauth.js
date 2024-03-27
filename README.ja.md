@@ -32,7 +32,7 @@
 - Deno
 
 ```ts
-// exsample.ts を参照
+// example.ts を参照
 
 import { MiAuth, Permissions, UrlParam } from "./mod.ts";
 import { generate } from "./src/deps.ts";
