@@ -6,6 +6,7 @@ import { join, ky } from "./deps.ts";
 export interface UrlParam {
   name: string;
   callback?: string;
+  icon?: URL | string;
   permission: Array<string>;
 }
 
@@ -87,6 +88,10 @@ export class MiAuth {
     const urlParam: Record<string, string> = {
       name: param.name,
       callback: param.callback as string,
+      icon:
+        (typeof param.icon === "string"
+          ? param.icon
+          : param.icon?.toString()) as string,
       permission: param.permission.join(","),
     };
 
